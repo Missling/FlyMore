@@ -3,8 +3,15 @@
   <img class="profile" src=<%= @user.profile_picture %>>
   <p><%= @user.introduction %></p>
 </div>
-<div class="ratings">
-  <p>Rating as driver: <%= '⭐' * @user.driver_rating %></p>
-  <p>Rating as passenger: <%= '⭐' * @user.passenger_rating %></p>
-</div>
+
+<% if @user.driver_rating && @user.passenger_rating %>
+  <div class="ratings">
+    <p>Rating as driver: <%= '⭐' * @user.driver_rating %></p>
+    <p>Rating as passenger: <%= '⭐' * @user.passenger_rating %></p>
+  </div>
+<% else %>
+  <p>This user has no ratings yet!</p>
+<% end %>
+
 <%= button_to "Create new trip", new_trip_path, method: :get %>
+<%= button_to "Look for trips", trips_path, method: :get %>
