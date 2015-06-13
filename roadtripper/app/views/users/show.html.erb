@@ -1,0 +1,10 @@
+<div class="profile">
+  <h1><%= @user.username %></h1>
+  <img class="profile" src=<%= @user.profile_picture %>>
+  <p><%= @user.introduction %></p>
+</div>
+<div class="ratings">
+  <p>Rating as driver: <%= '⭐' * @user.driver_rating %></p>
+  <p>Rating as passenger: <%= '⭐' * @user.passenger_rating %></p>
+</div>
+<%= button_to "Create new trip", new_trip_path, method: :get %>
