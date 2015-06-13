@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def show
+    @user = User.where(id: session[:user_id]).first
+  end
+
   def new
     @user = User.new
   end
@@ -10,7 +14,7 @@ class UsersController < ApplicationController
       password: params[:user][:password]
       )
 
-      if params[:user][:password] == params[:user][:password_confirmation] 
+      if params[:user][:password] == params[:user][:password_confirmation]
         @user.save
         session[:user_id] = user.id
         redirect_to user_path
