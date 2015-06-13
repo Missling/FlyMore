@@ -1,0 +1,11 @@
+<%= form_for @user , url: login_path(@user) do |f| %>
+  <div class = "login">
+    <%= f.label :username %>
+    <%= f.text_field :username, required: true, title: "Please Enter Your Username" %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password_hash, required: true %>
+
+    <%= f.submit %>
+    </div>
+<% end %>
