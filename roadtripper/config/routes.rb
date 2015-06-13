@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
 
-  root 'user#index'
+  root 'users#index'
+  post '/users/:user_id/ratings' => 'ratings#create'
 
   # Example of regular route:
   # get '/trips' => 'trips#index'
@@ -28,11 +29,11 @@ Rails.application.routes.draw do
   #   end
 
   # Example resource route with sub-resources:
-    resources :users do 
+    resources :users do
       resources :trips
     end
     resources :trips
-    
+
 
   # Example resource route with more complex sub-resources:
   #   resources :products do

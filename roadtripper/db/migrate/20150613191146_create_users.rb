@@ -5,8 +5,6 @@ class CreateUsers < ActiveRecord::Migration
       t.text :introduction
       t.string :contact_info
       t.string :username
-      t.integer :driver_rating
-      t.integer :passenger_rating
       t.string :password_hash
 
       t.timestamps null: false
