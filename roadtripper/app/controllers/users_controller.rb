@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def show
     @user = User.where(id: session[:user_id]).first
   end
@@ -8,16 +9,15 @@ class UsersController < ApplicationController
   end
 
   def create
-  p params
     @user = User.new(
       username: params[:user][:username],
-      password: params[:user][:password]
+      password_hash: params[:user][:password_hash]
       )
 
-      if params[:user][:password] == params[:user][:password_confirmation]
+      if params[:user][:password_hash] == params[:user][:password_confirmation]
         @user.save
-        session[:user_id] = user.id
-        redirect_to user_path
+        session[:user_id] = @user.id
+        redirect_to user_path(@user.id)
       else
         @error = "Password confirmation must match Password"
         render :new

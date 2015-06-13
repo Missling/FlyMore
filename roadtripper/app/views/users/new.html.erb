@@ -3,15 +3,17 @@
     <%= @error %>
   <% end %>
 
+    <div class = "signup">
     <%= f.label :username %>
     <%= f.text_field :username, required: true, title: "Please Enter Your Username" %>
 
     <%= f.label :password %>
-    <%= f.password_field :password, required: true, pattern: '.{6,}', title: "6 characters minimum" %>
+    <%= f.password_field :password_hash, required: true %>
 
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
 
     <%= f.submit %>
+    </div>
 <% end %>
    
