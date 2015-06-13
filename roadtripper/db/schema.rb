@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150613191224) do
+ActiveRecord::Schema.define(version: 20150613214752) do
 
   create_table "passengers", force: :cascade do |t|
     t.integer  "trip_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "value"
+    t.integer  "type"
+    t.text     "comment"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -38,11 +47,9 @@ ActiveRecord::Schema.define(version: 20150613191224) do
     t.text     "introduction"
     t.string   "contact_info"
     t.string   "username"
-    t.integer  "driver_rating"
-    t.integer  "passenger_rating"
     t.string   "password_hash"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end

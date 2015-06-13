@@ -16,6 +16,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.where(id: session[:user_id]).first
+    @user = User.where(id: params[:id]).first
+    @driver_ratings = Rating.where(user_id: params[:id], type: 1)
+    @passenger_ratings = Rating.where(user_id: params[:id], type: 2)
   end
 
   def new
