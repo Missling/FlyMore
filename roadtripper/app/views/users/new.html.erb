@@ -6,13 +6,12 @@
     <%= f.label :username %>
     <%= f.text_field :username, required: true, title: "Please Enter Your Username" %>
 
-    <%= f.label :email %>
-    <%= f.text_field :email, required: true, pattern: '[^@]+@[^@]+\.[a-zA-Z]{2,6}', title: "E.g john123@gmail.com", :class => 'rounded w-full' %>
-
     <%= f.label :password %>
-    <%= f.password_field :password, required: true, pattern: '.{6,}', title: "6 characters minimum", :class => 'rounded w-full' %>
+    <%= f.password_field :password, required: true, pattern: '.{6,}', title: "6 characters minimum" %>
 
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
+
+    <%= f.submit %>
 <% end %>
    
