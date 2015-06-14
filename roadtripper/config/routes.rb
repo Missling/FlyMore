@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   # Example of regular route:
   post '/login' => 'users#login'
+  post '/trips/:id/join' => 'passengers#join', as: :join
 
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
