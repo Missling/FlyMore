@@ -1,16 +1,23 @@
+<div class="jumbotron .col-md-8">
 <%= form_for @user , url: login_path(@user) do |f| %>
   <% if @error %>
     <%= @error %>
   <% end %>
-  <div class = "login">
     <%= f.label :username %>
     <%= f.text_field :username, required: true, title: "Please Enter Your Username" %>
 
     <%= f.label :password %>
     <%= f.password_field :password_hash, required: true %>
 
-    <%= f.submit %>
-    </div>
+    <%= f.submit "Login" %>
 <% end %>
+</div>
 
+<div class=".col-md-4">
 <%= link_to "Sign Up", href="/users/new" %>
+</div>
+
+<img src="https://unsplash.imgix.net/42/U7Fc1sy5SCUDIu4tlJY3_NY_by_PhilippHenzler_philmotion.de.jpg?fit=crop&fm=jpg&h=500&q=75&w=1050", alt="roadtrip", width="100%""> 
+
+
+
