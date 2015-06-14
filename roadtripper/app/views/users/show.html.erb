@@ -4,7 +4,9 @@
   <p><%= @user.introduction %></p>
 </div>
 
+
 <div class="driver-ratings">
+  <h3>Ratings as Driver:</h3>
   <% @driver_ratings.each do |rating| %>
     <div class="rating">
       <p><%= '⭐' * rating.value %></p>
@@ -14,6 +16,7 @@
 </div>
 
 <div class="passenger-ratings">
+  <h3>Ratings as passenger:</h3>
   <% @passenger_ratings.each do |rating| %>
     <div class="rating">
       <p><%= '⭐' * rating.value %></p>
@@ -21,6 +24,23 @@
     </div>
   <% end %>
 </div>
+
+<% if @user.id == session[:user_id] %>
+  <button class="edit">Edit Profile</button>
+  <%= form_for @user, url: user_path(@user), method: :put do |f| %>
+
+    <%= f.label :profile_picture %>
+    <%= f.text_field :profile_picture %>
+
+    <%= f.label :introduction %>
+    <%= f.text_field :introduction %>
+
+    <%= f.label :contact_info %>
+    <%= f.text_field :contact_info %>
+
+    <%= f.submit %>
+  <% end %>
+<% end %>
 
 <% if @user.id != session[:user_id] %>
   <%= form_for @rating, url: ratings_path(@user) do |f| %>

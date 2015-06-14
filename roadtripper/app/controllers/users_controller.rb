@@ -3,6 +3,16 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def update
+    @user = User.where(id: params[:id]).first
+    @user.update_attributes(
+      profile_picture: params[:user][:profile_picture],
+      introduction: params[:user][:introduction],
+      contact_info: params[:user][:contact_info]
+    )
+      redirect_to user_path(@user.id)
+  end
+
   def login
     @user = User.where(username: params[:user][:username]).first
     if @user && @user.password_hash == params[:user][:password_hash]
