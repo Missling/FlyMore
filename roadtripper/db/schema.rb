@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20150613214752) do
 
   create_table "ratings", force: :cascade do |t|
     t.integer  "value"
-    t.integer  "type"
+    t.integer  "user_type"
     t.text     "comment"
     t.integer  "user_id"
     t.datetime "created_at", null: false

@@ -23,12 +23,19 @@
 </div>
 
 <% if @user.id != session[:user_id] %>
-  <%= form_for @rating, url: ratings_path do |f| %>
-    <%= f.radio_button :type, '1' %>
+  <%= form_for @rating, url: ratings_path(@user) do |f| %>
+    <%= f.radio_button :user_type, '1' %>
     <%= label :driver_rating, 'Driver' %>
-    <%= f.radio_button :type, '2' %>
+
+    <%= f.radio_button :user_type, '2' %>
     <%= label :passenger_rating, 'Passenger' %>
-  <%= f.submit %>
+
+    <%= f.label :rating %>
+    <%= f.text_field :value %>
+
+    <%= f.label :comment %>
+    <%= f.text_field :comment %>
+    <%= f.submit %>
   <% end %>
 <% end %>
 
