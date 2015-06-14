@@ -14,10 +14,10 @@ Rails.application.routes.draw do
   post '/login' => 'users#login'
   post '/logout' => 'users#destroy'
 
-  post '/users/:user_id/ratings' => 'ratings#create'
+  post '/users/:user_id/ratings' => 'ratings#create', as: :ratings
 
   # Example of regular route:
-  post '/login' => 'users#login', as: :ratings
+  post '/login' => 'users#login'
 
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
