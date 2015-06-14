@@ -1,9 +1,12 @@
-<h1 class=><%= @user.username %>'s Roadtrip</h1>
-<h2>From <%= @trip.origin %> to <%= @trip.destination %></h2>
-<h3>Departing: <%= @trip.date %> at <%= @trip.time %></h3>
-<img src=<%= @trip.car_photo %>>
-<h2>Seats available: <%= @trip.seats %></h2>
-<p>Price: <%= @trip.price %></p>
+<div class="background">
+<div class="trip-container">
+  <h1><%= @user.username %>'s Roadtrip</h1>
+  <h3>From <%= @trip.origin %> to <%= @trip.destination %></h3>
+  <h3>Departing: <%= @trip.date %> at <%= @trip.time %></h3>
+  <img class="car" src=<%= @trip.car_photo %>>
+  <h2>Seats available: <%= @trip.seats %></h2>
+  <p>Price: <%= @trip.price %></p>
+</div>
 
 <div class="passengers-container">
   <h3>Passengers:</h3>
@@ -14,6 +17,7 @@
       <%= link_to "Profile", user_path(passenger.user.id) %>
     </div>
   <% end %>
+  <%= button_to "Join this trip!", join_path(@trip.id) %>
 </div>
 
-<%= button_to "Join this trip!", join_path(@trip.id) %>
+</div>
