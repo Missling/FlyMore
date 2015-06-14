@@ -1,28 +1,4 @@
 == README
+Roadtripper is a web application that makes ride sharing over long distances easy. Users can post road trips seeking passengers, as well as sign up as passengers on a posted road trip.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Made during THack @ SFO on June 13-14, 2015
