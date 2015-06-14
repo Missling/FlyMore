@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def login  
+  def login
     @user = User.where(username: params[:user][:username]).first
     p @user
     if @user && @user.password_hash == params[:user][:password_hash]
@@ -19,6 +19,7 @@ class UsersController < ApplicationController
     @user = User.where(id: params[:id]).first
     @driver_ratings = Rating.where(user_id: params[:id], type: 1)
     @passenger_ratings = Rating.where(user_id: params[:id], type: 2)
+    @rating = Rating.new
   end
 
   def new
