@@ -1,5 +1,5 @@
 <div class="profile">
-  <h1><%= @user.username %></h1>
+  <h1 class="jumbotron">Welcome, <%= @user.username %></h1>
   <img class="profile" src=<%= @user.profile_picture %>>
   <p><%= @user.introduction %></p>
 </div>
@@ -65,3 +65,4 @@
 
 <%= button_to "Create new trip", new_trip_path, method: :get %>
 <%= button_to "Look for trips", trips_path, method: :get %>
+
