@@ -2,7 +2,12 @@ form.edit_user {
   display: none;
 }
 
-.jumbotron {
-  width: 50%;
-  height:20%;
+.login {
+  float: right;
+}
+
+.header {
+  margin: auto;
+  text-align: center;
+  font-size: 50px;
 }
