@@ -9,7 +9,9 @@
   <h3>Ratings as Driver:</h3>
   <% @driver_ratings.each do |rating| %>
     <div class="rating">
-      <p><%= '⭐' * rating.value %></p>
+      <% rating.value.times do |stars| %>
+        <span class="glyphicon glyphicon-star"></span>
+      <% end %>
       <p><%= rating.comment %></p>
     </div>
   <% end %>
@@ -19,7 +21,9 @@
   <h3>Ratings as passenger:</h3>
   <% @passenger_ratings.each do |rating| %>
     <div class="rating">
-      <p><%= '⭐' * rating.value %></p>
+      <% rating.value.times do |stars| %>
+        <span class="glyphicon glyphicon-star"></span>
+      <% end %>
       <p><%= rating.comment %></p>
     </div>
   <% end %>
