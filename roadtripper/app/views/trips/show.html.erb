@@ -1,0 +1,19 @@
+<h1 class=><%= @user.username %>'s Roadtrip</h1>
+<h2>From <%= @trip.origin %> to <%= @trip.destination %></h2>
+<h3>Departing: <%= @trip.date %> at <%= @trip.time %></h3>
+<img src=<%= @trip.car_photo %>>
+<h2>Seats available: <%= @trip.seats %></h2>
+<p>Price: <%= @trip.price %></p>
+
+<div class="passengers-container">
+  <h3>Passengers:</h3>
+  <% @passengers.each do |passenger| %>
+    <div class="passenger">
+      <div class="icon"><img src=<%= passenger.user.profile_picture %>></div>
+      <%= passenger.user.username %>
+      <%= link_to "Profile", user_path(passenger.user.id) %>
+    </div>
+  <% end %>
+</div>
+
+<%= button_to "Join this trip!", join_path(@trip.id) %>
