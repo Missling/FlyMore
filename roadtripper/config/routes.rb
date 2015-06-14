@@ -5,13 +5,13 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
 
   root 'users#index'
-<<<<<<< HEAD
-=======
+
   post '/users/:user_id/ratings' => 'ratings#create'
->>>>>>> 81128c7033e7b468475b8bca4ac514e752f57998
+
 
   # Example of regular route:
   post '/login' => 'users#login'
+  post '/logout' => 'users#destroy'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

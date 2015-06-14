@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head>
+
+</body><head>
   <title>Roadtripper</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -8,7 +9,10 @@
 </head>
 <body>
 
+<% if session[:user_id] %>
+  <%=link_to "Log Out",user_path(@user.id), method: :delete %>
+<% end %>
+
 <%= yield %>
 
-</body>
 </html>
