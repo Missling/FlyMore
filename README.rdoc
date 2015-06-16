@@ -1,0 +1,4 @@
+== README
+Roadtripper is a web application that makes ride sharing over long distances easy. Users can post road trips seeking passengers, as well as sign up as passengers on a posted road trip.
+
+Made during THack @ SFO on June 13-14, 2015
