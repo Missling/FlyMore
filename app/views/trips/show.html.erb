@@ -19,5 +19,33 @@
   <% end %>
   <%= button_to "Join this trip!", join_path(@trip.id) %>
 </div>
+</div>
+<a href="/trips?">Return to view all trips</a>
 
+<div class="container">
+ 
+  <h1>Firebase Chat Application</h1>
+
+  <div class="panel panel-default">
+
+    <div class="panel-body">
+      <div id="comments-container"></div>
+    </div>
+
+    <div class="panel-footer">
+
+      <form role="form">
+          <div class="form-group">
+              <label for="comments">Please enter your comments here</label>
+              <input class="form-control" id="comments" name="comments">
+          </div>
+
+          <button type="submit" id="submit-btn" name="submit-btn"
+              class="btn btn-success">Send Comments</button>
+
+          <button type="reset" class="btn btn-danger">Clear Comments</button>
+      </form>
+
+    </div>
+  </div>
 </div>

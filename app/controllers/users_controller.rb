@@ -21,6 +21,7 @@ class UsersController < ApplicationController
       redirect_to user_path(@user.id)
     else
       @error = "Invalid Username or Password"
+      @user = User.new
       render :index
     end
   end
