@@ -14,4 +14,5 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+// = require_tree . 
+// require_tree . allows the all the above js files to be accessible in all the views
