@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
-// = require_tree . 
+//= require firebase/firebase
+//= require firechat-2.0.1/firechat.min
+//= require bootstrap-3.3.4/bootstrap.min
+//= require_tree . 
 // require_tree . allows the all the above js files to be accessible in all the views
