@@ -1,35 +1,36 @@
 $(document).ready(function() {
-
-  var fireBaseRef = new Firebase("resplendent-inferno-4019.firebaseIO.com");
-   
+  if ($('#chat').length !== 0){
+    var fireBaseRef = new Firebase("resplendent-inferno-4019.firebaseIO.com");
+     
     $("#submit-btn").bind("click", function() {
-        var comment = $("#comments");
-        var commentValue = $.trim(comment.val());
+      var comment = $("#comments");
+      var commentValue = $.trim(comment.val());
 
-        if (commentValue.length === 0) {
-            alert('Comments are required to continue!');
-        } else {
-          fireBaseRef.push({comment: commentValue}, function(error) {
-              if (error !== null) {
-                  alert('Unable to push comments to Firebase!');
-              }
-          });
+      if (commentValue.length === 0) {
+        alert('Comments are required to continue!');
+      } else {
+        fireBaseRef.push({comment: commentValue}, function(error) {
+          if (error !== null) {
+            alert('Unable to push comments to Firebase!');
+          }
+        });
 
-          comment.val("");
-        }
+        comment.val("");
+      }
 
-        return false;
+      return false;
     });
 
     fireBaseRef.on('child_added', function(snapshot) {
-        var uniqName = snapshot.name();
-        var comment = snapshot.val().comment;
-        var commentsContainer = $('#comments-container');
+      var uniqName = snapshot.name();
+      var comment = snapshot.val().comment;
+      var commentsContainer = $('#comments-container');
 
-        $('<div/>', {class: 'comment-container'})
-            .html('<span class="label label-default">Comment ' 
-                + uniqName + '</span>' + comment).appendTo(commentsContainer);
+      $('<div/>', {class: 'comment-container'})
+        .html('<span class="label label-default">Comment ' 
+          + uniqName + '</span>' + comment).appendTo(commentsContainer);
 
-        commentsContainer.scrollTop(commentsContainer.prop('scrollHeight'));
+      commentsContainer.scrollTop(commentsContainer.prop('scrollHeight'));
     });
+  };
 })
